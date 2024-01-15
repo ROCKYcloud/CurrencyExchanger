@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CurrencyConverterApiTest : TestCase() {
 
     @Test
-    fun getDevicesFromApi() {
+    fun getExchangeRatesFromApi() {
         val api = provideApi()
         val test = runBlocking {
             api.getExchangeRates()
