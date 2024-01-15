@@ -1,4 +1,4 @@
-package com.example.currencyexchangertesttask.api
+package com.example.currencyexchangertesttask.tests
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.example.currencyexchangertesttask.data.api.ApiService
@@ -32,6 +32,7 @@ class CurrencyConverterTests : TestCase() {
         }
         return test.body()!!.rates
     }
+
     @Test
     fun convertCurrencyRatesToList() {
         val rates = gatRates()
@@ -46,6 +47,7 @@ class CurrencyConverterTests : TestCase() {
         }
         assertEquals(list.isNotEmpty(), true)
     }
+
     private fun provideApi(): ApiService = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
